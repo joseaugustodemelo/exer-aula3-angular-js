@@ -1,0 +1,33 @@
+<form name="frmPesquisar" novalidate ng-controller="PesquisarProdutoController as vm">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Pesquisar produtos
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <exer-aula03-input-text
+                        label="ID Produto"
+                        ng-model="vm.entidade.id"
+                        colspan="3"
+                        ng-required="true">
+                </exer-aula03-input-text>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button class="btn btn-primary"
+                    ng-click="vm.pesquisar()">Pesquisar
+            </button>
+            <button class="btn btn-success"
+                    ng-click="vm.alterarRota('cadastrarProduto')">Cadastrar
+            </button>
+        </div>
+
+    </div>
+
+    <div ui-grid="vm.gridOptions"
+         ui-grid-selection></div>
+
+</form>

@@ -1,0 +1,44 @@
+<form name="frmCadastrar" novalidate ng-controller="CadastraProdutoController as vm">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Cadastrar produto
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <exer-aula03-input-text
+                        label="ID Produto"
+                        ng-model="vm.entidade.id"
+                        colspan="3"
+                        ng-required="true">
+                </exer-aula03-input-text>
+
+                <exer-aula03-input-text
+                        label="Produto"
+                        ng-model="vm.entidade.produto"
+                        colspan="6"
+                        ng-required="true">
+                </exer-aula03-input-text>
+
+                <exer-aula03-input-text
+                        label="Valor"
+                        ng-model="vm.entidade.valor"
+                        colspan="3"
+                        ng-required="true">
+                </exer-aula03-input-text>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button class="btn btn-primary"
+                    ng-click="vm.salvar()">Salvar
+            </button>
+            <button class="btn btn-default"
+                    ng-click="vm.alterarRota('pesquisarProduto')">Pesquisar
+            </button>
+        </div>
+
+    </div>
+
+</form>

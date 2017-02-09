@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisar Produtos</title>
+
+    <!-- imports Externos CSS-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <!--<link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">-->
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+
+    <!-- imports Externos JS-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <!--<script src="node_modules/angular-animate/angular-animate.js"></script>-->
+    <!--<script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>-->
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+    <!-- imports Internos CSS-->
+
+    <!-- imports Internos JS-->
+    <script src="app/config/exer-aula03.module.js"></script>
+    <script src="app/config/exer-aula03-rotas.config.js"></script>
+    <script src="app/controller/index.controler.js"></script>
+
+    <!-- Arquiteturra JS-->
+    <script src="arquitetura/directives/exer-aula03-input-text/exer-aula03-input-text.directive.js"></script>
+
+</head>
+<body ng-app="exerAula03"
+      ng-controller="IndexController as vm"
+      class="container">
+
+<!-- views-->
+<div>
+    <div ui-view></div>
+</div>
+
+</body>
+</html>

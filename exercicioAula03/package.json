@@ -1,0 +1,23 @@
+{
+  "name": "exer_aula_3",
+  "version": "1.0.0",
+  "description": "Exercício de fixação",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "José Augusto de Melo",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "v1.5.11",
+    "angular-animate": "v1.5.11",
+    "angular-messages": "v1.5.11",
+    "angular-toastr": "v2.1.1",
+    "angular-ui-grid": "^4.0.2",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "v3.3.7",
+    "font-awesome": "v4.7.0",
+    "jquery": "v3.1.1",
+    "oclazyload": "^1.1.0"
+  }
+}
