@@ -6,17 +6,19 @@
         .module('exerAula03')
         .controller('PesquisarProdutoController', PesquisarProdutoController);
 
-    function PesquisarProdutoController ($rootScope, $state) {
+    function PesquisarProdutoController ($rootScope, $state, ExerAula03AlertService) {
         var vm = this;
 
         vm.entidade = {};
-        //vm.listProdutos = [];
         vm.pesquisar = pesquisar;
-        vm.limpar = limpar;
         vm.alterarRota = alterarRota;
 
-        function alterarRota(state) {
-            $state.go(state);
+        function alterarRota(state, id) {
+            if(id !== ""){
+                $state.go(state, id);
+            } else {
+                $state.go(state);
+            }
         }
 
         function pesquisar() {
@@ -29,15 +31,20 @@
             enableRowSelection:false,
             rowTemplate:'app/templates/row-template.html',
             columnDefs: [
-                { name: 'Id', field:'idProduto'},
+                { name: 'Id', field:'id'},
                 { name: 'Produto', field:'produto' },
+                { name: 'Valor', field:'valor' },
                 {
-                    name: '', field: 'editar', width: 40,
+                    name: 'Editar',
+                    field: 'editar',
+                    width: 65,
                     cellTemplate: 'app/templates/cell-template-editar.html',
                     onClick:editar
                 },
                 {
-                    name: '', field: 'excluir', width: 40,
+                    name: 'Excluir',
+                    field: 'excluir',
+                    width: 65,
                     cellTemplate: 'app/templates/cell-template-excluir.html',
                     onClick:excluir
                 }
@@ -46,20 +53,15 @@
 
         function excluir(index) {
             $rootScope.listProdutos.splice(index, 1);
-
-            //PdAlertService.showSuccess('Registro excluido com sucesso!', 'Ok');
-
-            limpar();
-        }
-        
-        function editar () {
-            vm.alterarRota('cadastrarProduto', {id:vm.entidade.id})
+            ExerAula03AlertService.showSuccess('Registro excluido com sucesso!', 'Ok');
         }
 
-        function limpar () {
-            vm.entidade = {};
-//            vm.listProdutos = [];
+        function editar (index) {
+            //var entidadeAux = $rootScope.listProdutos[index];
+            //vm.alterarRota('cadastrarProduto', {id:entidadeAux.id});
+            vm.alterarRota('cadastrarProduto', {id:index});
         }
+
     }
 
 })();

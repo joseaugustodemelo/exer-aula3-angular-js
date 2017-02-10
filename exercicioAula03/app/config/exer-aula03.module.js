@@ -9,7 +9,8 @@
         'ui.grid',
         'ui.grid.selection',
         'ui.router',
-        'oc.lazyLoad'
+        'oc.lazyLoad',
+        'toastr'
     ]);
 
 })();

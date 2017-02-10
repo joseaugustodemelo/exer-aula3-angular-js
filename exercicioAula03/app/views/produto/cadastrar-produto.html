@@ -1,4 +1,7 @@
-<form name="frmCadastrar" novalidate ng-controller="CadastraProdutoController as vm">
+<form name="vm.frmCadastrar"
+      novalidate ng-controller="CadastraProdutoController as vm"
+      ng-submit="vm.salvar()"
+      id="vm.frmCadastrar">
 
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -31,9 +34,8 @@
         </div>
 
         <div class="panel-footer">
-            <button class="btn btn-primary"
-                    ng-click="vm.salvar()">Salvar
-            </button>
+            <button class="btn btn-primary">Salvar</button>
+
             <button class="btn btn-default"
                     ng-click="vm.alterarRota('pesquisarProduto')">Pesquisar
             </button>
